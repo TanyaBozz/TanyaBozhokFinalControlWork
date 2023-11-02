@@ -14,6 +14,20 @@ if (! validateInputCountElement) {
 string[] primaryArray = new string[countElements];
 FillPrimaryArray(primaryArray);
 
+int countSecondaryArrayElements = CountSecondaryArrayElements(primaryArray);
+string[] secondaryArray = new string[countSecondaryArrayElements];
+
+int CountSecondaryArrayElements(string[] filledArray)
+{
+    int countSecondaryArrayElements = 0;
+    for (int i = 0; i < filledArray.Length; i++) {
+        if (filledArray[i].Length <= 3) {
+            countSecondaryArrayElements++;
+        }
+    }
+    return countSecondaryArrayElements;
+}
+
 void FillPrimaryArray(string[] fillableArray)
 {
     for (int i = 0; i < fillableArray.Length; i++) {
