@@ -11,6 +11,17 @@ if (! validateInputCountElement) {
     return;
 }
 
+string[] primaryArray = new string[countElements];
+FillPrimaryArray(primaryArray);
+
+void FillPrimaryArray(string[] fillableArray)
+{
+    for (int i = 0; i < fillableArray.Length; i++) {
+        Console.Write($"Введите {i + 1} элемент: ");
+        fillableArray[i] = Console.ReadLine();
+    }
+}
+
 bool ValidateInputCountElement(int validateValue)
 {
     if (validateValue > 10 || validateValue < 1)
