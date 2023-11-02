@@ -18,6 +18,21 @@ int countSecondaryArrayElements = CountSecondaryArrayElements(primaryArray);
 string[] secondaryArray = new string[countSecondaryArrayElements];
 FillSecondaryArray(primaryArray, secondaryArray);
 
+PrintArray(primaryArray);
+Console.Write(" -> ");
+PrintArray(secondaryArray);
+Console.WriteLine();
+
+void PrintArray(string[] arr)
+{
+    Console.Write("[");
+    for (int i = 0; i < arr.Length; i++)
+    {
+        if (i < arr.Length - 1) Console.Write($"{arr[i]}, ");
+        else Console.Write($"{arr[i]}");
+    }
+    Console.Write("]");
+}
 
 void FillSecondaryArray(string[] filledPrimaryArray, string[] emptySecondaryArray)
 {
