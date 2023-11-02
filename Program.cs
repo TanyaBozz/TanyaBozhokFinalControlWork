@@ -16,6 +16,19 @@ FillPrimaryArray(primaryArray);
 
 int countSecondaryArrayElements = CountSecondaryArrayElements(primaryArray);
 string[] secondaryArray = new string[countSecondaryArrayElements];
+FillSecondaryArray(primaryArray, secondaryArray);
+
+
+void FillSecondaryArray(string[] filledPrimaryArray, string[] emptySecondaryArray)
+{
+    int j = 0;
+    for (int i = 0; i < filledPrimaryArray.Length; i++) {
+        if (filledPrimaryArray[i].Length <= 3) {
+            emptySecondaryArray[j] = filledPrimaryArray[i];
+            j++;
+        }
+    }
+}
 
 int CountSecondaryArrayElements(string[] filledArray)
 {
